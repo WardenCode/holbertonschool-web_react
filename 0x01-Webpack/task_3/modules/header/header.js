@@ -8,4 +8,5 @@ $(() => {
 
     body.append(logo);
     body.append(firstH1);
+    console.log('Init header');
 });

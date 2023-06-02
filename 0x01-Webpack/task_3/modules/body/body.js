@@ -1,6 +1,6 @@
 import './body.css';
 import $ from 'jquery';
-import { debounce } from 'lodash';
+import _ from 'lodash';
 
 $(() => {
   const body = $('body');
@@ -15,7 +15,7 @@ $(() => {
     countParagraph.text(`${count} clicks on the button`);
   }
 
-  button.on('click', debounce(updateCounter, 1000));
+  button.on('click', _.debounce(updateCounter, 1000));
 
   body.append(secondParagraph);
   body.append(button);
