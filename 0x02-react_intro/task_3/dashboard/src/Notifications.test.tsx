@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
 import Notifications from './Notifications';
 
 test('should render notifications correctly', () => {
@@ -17,6 +16,7 @@ test('should Notifications renders three list items', () => {
 
 test('should notifications renders the correct text', async () => {
     render(<Notifications />);
+    const toFind = await screen.findByText('Here is the list of notifications')
 
-    expect('Here is the list of notifications').toBeInTheDocument();
+    expect(toFind).toBeInTheDocument();
 })
