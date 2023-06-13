@@ -6,7 +6,11 @@ export function capFirstLetter(string) {
 
 export function printBestStudents(object) {
   const seq = Seq(object);
-  const filteredStudents = seq.filter((student) => student.score > 70);
+  const filteredStudents = seq.filter((student) => {
+    student.firstName.charAt(0).toUpperCase();
+    return student.score > 70;
+  });
+
   const students = filteredStudents.toJS();
 
   Object.keys(students).forEach((key) => {
