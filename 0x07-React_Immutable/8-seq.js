@@ -13,9 +13,10 @@ export function printBestStudents(object) {
 
   const students = filteredStudents.toJS();
 
-  Object.keys(students).forEach((key) => {
+  Object.keys(students).map((key) => {
     students[key].firstName = capFirstLetter(students[key].firstName);
     students[key].lastName = capFirstLetter(students[key].lastName);
+    return students[key];
   });
 
   console.log(students);
